@@ -1,7 +1,7 @@
 class drana {
     constructor(brand, speed) {
-        this.brand
-        this.speed
+        this.brand = brand
+        this.speed = speed
     }
     accelerate() {
         this.speed += 10;
@@ -9,5 +9,5 @@ class drana {
     }
 }
 
-const myCar = new Car("Tesla", 100);
+const myCar = new drana("Tesla", 100);
 console.log(myCar.accelerate());

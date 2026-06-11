@@ -81,4 +81,4 @@ const lname = [
     York,
 ]
 
-const character = [fname, lname, roles, race, weapons]
+export let character = [fname, lname, roles, race, weapons]

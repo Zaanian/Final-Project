@@ -1,0 +1,29 @@
+p {
+    padding: 0.75rem;
+}
+
+:root {
+    --font-body: Roboto, Helvetica, sans-serif;
+
+    /* colors */
+    --primary-color: #E28413;
+    --secondary-color: #E5B458;
+
+    --light-grey: #d0d0d0;
+    --dark-grey: #303030;
+
+    /* sizes */
+    --font-base: 18px;
+    --small-font: 0.8em;
+    --large-font: 1.2em;
+}
+
+img {
+    max-width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
