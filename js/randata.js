@@ -9,7 +9,7 @@ export async function getTrueRandomIntegers() {
         jsonrpc: "2.0",
         method: "generateIntegers",
         params: {
-            apiKey: "959c5cba-0250-4962-b98d-e59817c0815d",
+            apiKey: "HZ7LUZbSCO2sTyDAj97Sun7tLCqCf3kLS5uofAIGkAreUpPhlQkTBSyBgdHtMg3J3PWpvozRSZ2z7/eKHlUleg==",
             n: 1,
             min: 0,
             max: 10,
