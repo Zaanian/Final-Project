@@ -1,28 +1,26 @@
 
-
 //get random number
-export async function getTrueRandomIntegers() {
-    const url = 'https://random.org';
-
+export async function fetchTrueRandomIntegers(apiKey, count, min, max) {
+    const url = 'https://api.random.org/json-rpc/4/invoke';
 
     const payload = {
-        jsonrpc: "2.0",
-        method: "generateIntegers",
+        jsonrpc: '2.0',
+        method: 'generateIntegers',
         params: {
-            apiKey: "HZ7LUZbSCO2sTyDAj97Sun7tLCqCf3kLS5uofAIGkAreUpPhlQkTBSyBgdHtMg3J3PWpvozRSZ2z7/eKHlUleg==",
-            n: 1,
-            min: 0,
-            max: 10,
-            replacement: true
+            apiKey: apiKey,
+            n: count,
+            min: min,
+            max: max,
+            replacement: true // Optional: allows duplicates
         },
-        id: 1
+        id: Math.floor(Math.random() * 1000) // Unique request ID
     };
 
     try {
         const response = await fetch(url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'text/plain'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify(payload)
         });
@@ -30,12 +28,12 @@ export async function getTrueRandomIntegers() {
         const data = await response.json();
 
         if (data.error) {
-            console.error(`API Error (${data.error.code}): ${data.error.message}`);
-        } else {
-            const randomNumbers = data.result.random.data;
-            console.log('True Random Numbers:', randomNumbers);
+            throw new Error(data.error.message);
         }
+
+        // Extract the array of numbers from the response object
+        return data.result.random.data;
     } catch (error) {
-        console.error('Network Error:', error);
+        console.error('RANDOM.ORG API Error:', error);
     }
 }

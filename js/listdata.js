@@ -1,0 +1,93 @@
+const roles = [
+    "warrior",
+    "knight",
+    "wizard",
+    "sorcerer",
+    "rouge",
+    "assassin",
+    "bard",
+    "paladin",
+    "barbarian",
+    "fighter",
+    "monk",
+    "archer",
+    "hunter",
+    "cleric",
+    "druid",
+]
+
+const race = [
+    "human",
+    "elf",
+    "dwarf",
+    "halfling",
+    "tiefling",
+    "dragonkin",
+    "gnomes",
+    "lizardfolk",
+    "goliaths",
+]
+
+const weapons = [
+    "sword",
+    "axe",
+    "dagger",
+    "bow",
+    "staff",
+    "sword",
+    "mace",
+    "spear",
+]
+
+const fname = [
+    "Sadie",
+    "Dominic",
+    "Kallie",
+    "Anders",
+    "Sutton",
+    "Thaddeus",
+    "Kinsley",
+    "Jaiden",
+    "Jane",
+    "Carl",
+    "Heidi",
+    "Hayes",
+    "Jayda",
+    "Drake",
+    "Magdalena",
+    "Bridger",
+    "Phoenix",
+    "Kashton",
+    "Ember",
+    "Westin",
+]
+
+const lname = [
+    "Mendoza",
+    "Knox",
+    "Weeks",
+    "Campos",
+    "Palacios",
+    "Collins",
+    "Baldwin",
+    "Jensen",
+    "Esparza",
+    "Lara",
+    "Harper",
+    "Wall",
+    "Sparks",
+    "Daugherty",
+    "Esquivel",
+    "Lucas",
+    "Doyle",
+    "Daniels",
+    "Leach",
+    "York",
+]
+
+
+
+export function datalist() {
+    const character = { fname, lname, roles, race, weapons }
+    return character
+}
