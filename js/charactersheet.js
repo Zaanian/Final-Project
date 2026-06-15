@@ -1,13 +1,14 @@
 import { loadHeaderFooter } from "./util.js";
+import { makeCharacter } from "./createcharacter.js";
+
 
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM loaded and ready for changes");
 
-    //loadheaderfooter(".headmain", "../public/partial/header.html")
-    //loadheaderfooter(".main-footer", "../public/partial/footer.html")
     loadHeaderFooter()
-    //getstats()
-
-
 });
+
+const button = document.getElementById("btn");
+button.addEventListener("click", () => makeCharacter());
+
 

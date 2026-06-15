@@ -12,6 +12,7 @@ body {
 
     width: 100vw;
     height: 100dvh;
+    text-align: center;
 
     display: flex;
     flex-direction: column;
@@ -19,6 +20,18 @@ body {
 
 main {
     flex: 1;
+}
+
+
+.main {
+    margin: 10px;
+    border-width: 2px;
+    background-color: #E28413;
+
+}
+
+ul {
+    list-style: none;
 }
 
 .headmain {
