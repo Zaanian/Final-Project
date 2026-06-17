@@ -15,10 +15,15 @@ export function characterSave() {
         const savedCharacters = getLocalStorage("character") || []
         const elementList = document.querySelectorAll(".element")
         const arraySheet = Array.from(elementList, element => element.textContent)
-        
+
         savedCharacters.push(arraySheet)
 
         setLocalStorage("character", savedCharacters)
+
+        const messageElement = document.createElement("p")
+        messageElement.textContent = "Character saved successfully!"
+
+        
 
     } else {
         console.log("ID does not exist.")

@@ -28,7 +28,7 @@ function renderCharacterWeapons(weapons) {
 }
 
 function renderStats(str, dex, con, int, wis, cha) {
-    const stats = document.querySelector(".stats")
+    const stats = document.getElementById("stats")
     stats.innerHTML = `
     <ul class="stats2">
         <li class="element" id="strength">Strength: ${str}</li>

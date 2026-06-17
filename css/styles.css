@@ -10,7 +10,7 @@ p {
 
 body {
 
-    
+
     height: 100dvh;
     text-align: center;
 
@@ -22,21 +22,31 @@ main {
     flex: 1;
 }
 
-
-.main {
+.display {
     margin: 10px;
-    border-width: 2px;
-    background-color: #E28413;
+}
 
+.stats2 {
+    border: none;
+}
+
+#crtchar {
+    margin: 10px;
+    border: solid;
+    background-color: #E28413;
 }
 
 ul {
     list-style: none;
     text-align: center;
+    margin: 10px;
+    border: solid;
 }
 
 li {
+    list-style: none;
     margin: 10px;
+    background-color: #d0d0d0;
 }
 
 a {
@@ -52,7 +62,7 @@ a {
 
 }
 
-.head-main {
-    text-align: center;
-    border: 2px black
+footer {
+    border: 2px solid #E5B458;
+    background-color: #E28413;
 }

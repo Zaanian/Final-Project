@@ -1,53 +1,93 @@
-import { getLocalStorage } from "./util.js";
+import { getLocalStorage, setLocalStorage } from "./util.js";
 
 
 export function retrieveCharacterData() {
     let storage = getLocalStorage("character") || [];
     //characterTemplate(storage)
-    
+
     renderCharacterTable(storage)
     console.log(storage)
 }
 
+export function clearStorage() {
+    let clearArray = []
+    setLocalStorage("character", clearArray)
+    const container = document.querySelector(".display")
+    const message = document.createElement("p")
+    message.textContent = "Character Storage has been cleared"
+    container.appendChild(message)
+}
+
 function renderCharacterTable(data) {
-    const characters = [];
-    let currentCharacter = {};
 
-    //
-    data.forEach(item => {
-        if (Array.isArray(item)) {
-            // 
-            const charObj = {};
-            item.forEach(stat => {
-                const [key, val] = stat.split(": ");
-                charObj[key.trim()] = val.trim();
-            });
-            characters.push(charObj);
-        } else {
-            // Process the flat elements at the beginning of the main array
-            const [key, val] = item.split(": ");
-            currentCharacter[key.trim()] = val.trim();
+    if (data.length === 0) {
+        console.log("storage is empty")
+        const contain = document.querySelector(".message")
+        const newElement = document.createElement("p")
+        newElement.textContent = "Storage is empty"
 
-            // 
-            if (key.trim() === "Charisma") {
-                characters.push(currentCharacter);
-                currentCharacter = {}; // 
+        contain.appendChild(newElement)
+
+    } else {
+        const characters = [];
+        let currentCharacter = {};
+
+        //
+        data.forEach(item => {
+            if (Array.isArray(item)) {
+                // 
+                const charObj = {};
+                item.forEach(stat => {
+                    const [key, val] = stat.split(": ");
+                    charObj[key.trim()] = val.trim();
+                });
+                characters.push(charObj);
+            } else {
+                // 
+                const [key, val] = item.split(": ");
+                currentCharacter[key.trim()] = val.trim();
+
+                // 
+                if (key.trim() === "Charisma") {
+                    characters.push(currentCharacter);
+                    currentCharacter = {}; // 
+                }
             }
-        }
-    });
+        });
 
 
-    // 2. Build the HTML Table
+        // Build and render HTML 
+        //characterLine(characters)
+        characters.forEach((character) => {
+            // console.log(`${character.Name} is a ${character.Race} ${character.Role}.`);
+            //console.log(character)
+            characterLine(character)
+        })
 
+
+
+    }
 
 
 }
 
-export function characterLine(key, value) {
+export function characterLine(arrayList) {
+
 
     const displayElement = document.querySelector(".display")
-    displayElement.innerHTML = `
-    <li>here</li>`
+    console.log(arrayList)
+    displayElement.innerHTML += `
+        <ul>
+            <li>Name: ${arrayList.Name}</li>
+            <li>Race: ${arrayList.Race}</li>
+            <li>Role: ${arrayList.Role}</li>
+            <li>Weapon: ${arrayList.Weapons}</li>
+            <li>Strength: ${arrayList.Strength}</li>
+            <li>Constitution: ${arrayList.Constitution}</li>
+            <li>Intelligence: ${arrayList.Intelligence}</li>
+            <li>Wisdom: ${arrayList.Wisdom}</li>
+            <li>Charisma: ${arrayList.Charisma}</li>
+        </ul> `
 }
 
 export function characterTemplate2() {
