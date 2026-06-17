@@ -108,7 +108,7 @@ const lname = [
 
 export function datalist() {
     const character = {
-        classes, fname, lname, roles, race, weapons
+        classes, fname, lname, roles, race
     }
     return character
 }
