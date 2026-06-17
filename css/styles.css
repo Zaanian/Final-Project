@@ -32,6 +32,11 @@ main {
 
 ul {
     list-style: none;
+    text-align: center;
+}
+
+li {
+    margin: 10px;
 }
 
 .headmain {

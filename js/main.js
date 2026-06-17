@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     loadHeaderFooter()
     //getstats()
 
+    const button = document.getElementById("btn")
 
 });
 

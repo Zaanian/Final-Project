@@ -2,7 +2,13 @@ import { datalist } from "./listdata.js"
 import { fetchTrueRandomIntegers } from "./randata.js"
 
 
+export function setLocalStorage(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+}
 
+export function getLocalStorage(key) {
+    return JSON.parse(localStorage.getItem(key));
+}
 
 export function renderWithTemplate(template, parentElement, data, callback) {
     parentElement.innerHTML = template;

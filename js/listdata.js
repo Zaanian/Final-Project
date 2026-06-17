@@ -1,3 +1,22 @@
+
+const classes = [
+    { warrior: ["sword", "shield", "axe"] },
+    { knight: ["sword", "shield"] },
+    { wizard: ["staff", "wand"] },
+    { sorcerer: ["lightning", "magic missile"] },
+    { rouge: ["dagger", "bow & arrow"] },
+    { assassin: ["dagger", "poison"] },
+    { bard: ["music", "silver tongue"] },
+    { paladin: ["hammer", "mace"] },
+    { barbarian: ["fists", "club", "rock"] },
+    { fighter: ["fist", "club"] },
+    { monk: ["martial art", "Kiriku"] },
+    { archer: ["bow & arrow", "knife"] },
+    { hunter: ["bow & arrow", "pet", "knife"] },
+    { cleric: ["mace", "talisman"] },
+    { druid: ["staff", "shapeshift"] }
+];
+
 const roles = [
     "warrior",
     "knight",
@@ -88,6 +107,8 @@ const lname = [
 
 
 export function datalist() {
-    const character = { fname, lname, roles, race, weapons }
+    const character = {
+        classes, fname, lname, roles, race, weapons
+    }
     return character
 }
