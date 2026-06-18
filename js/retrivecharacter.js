@@ -3,7 +3,7 @@ import { getLocalStorage, setLocalStorage } from "./util.js";
 
 export function retrieveCharacterData() {
     let storage = getLocalStorage("character") || [];
-    
+
 
     renderCharacterTable(storage)
     console.log(storage)
@@ -16,6 +16,7 @@ export function clearStorage() {
     const message = document.createElement("p")
     message.textContent = "Character Storage has been cleared"
     container.appendChild(message)
+    window.location.reload()
 }
 
 function renderCharacterTable(data) {
