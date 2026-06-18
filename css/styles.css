@@ -20,10 +20,13 @@ body {
 
 main {
     flex: 1;
+
 }
 
 .display {
-    margin: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 2px;
 }
 
 .stats2 {
@@ -41,16 +44,27 @@ ul {
     text-align: center;
     margin: 10px;
     border: solid;
+    background-color: #E28413;
 }
 
 li {
     list-style: none;
     margin: 10px;
-    background-color: #d0d0d0;
+    background-color: #E5B458;
+    font-size: large;
 }
 
 a {
     margin: 10px;
+}
+
+button {
+    background-color: #E5B458;
+    color: white;
+}
+
+button:hover {
+    background-color: aqua;
 }
 
 .headmain {

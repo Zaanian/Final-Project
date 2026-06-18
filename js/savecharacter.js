@@ -19,11 +19,13 @@ export function characterSave() {
         savedCharacters.push(arraySheet)
 
         setLocalStorage("character", savedCharacters)
-
+        const contain = document.getElementById("messge")
         const messageElement = document.createElement("p")
         messageElement.textContent = "Character saved successfully!"
 
-        
+        contain.appendChild(messageElement)
+
+
 
     } else {
         console.log("ID does not exist.")

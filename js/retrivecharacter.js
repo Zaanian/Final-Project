@@ -3,7 +3,7 @@ import { getLocalStorage, setLocalStorage } from "./util.js";
 
 export function retrieveCharacterData() {
     let storage = getLocalStorage("character") || [];
-    //characterTemplate(storage)
+    
 
     renderCharacterTable(storage)
     console.log(storage)
@@ -56,16 +56,10 @@ function renderCharacterTable(data) {
         });
 
 
-        // Build and render HTML 
-        //characterLine(characters)
+        //html render
         characters.forEach((character) => {
-            // console.log(`${character.Name} is a ${character.Race} ${character.Role}.`);
-            //console.log(character)
             characterLine(character)
         })
-
-
-
     }
 
 
